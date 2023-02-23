@@ -7,7 +7,7 @@ module.exports = defineConfig({
   reporter: 'junit',
   video: false,
   reporterOptions: {
-    testsuitesTitle: 'Dashboard tests',
+    testsuitesTitle: 'my tests',
     mochaFile: 'results/testResults[hash].xml',
     toConsole: true
   
@@ -17,19 +17,10 @@ module.exports = defineConfig({
     },
     experimentalSessionAndOrigin: true,
     defaultCommandTimeout: 4000,
-    baseUrl: 'https://loans.development.jgwentworth.com/',
+    baseUrl: 'https://rozetka.com.ua/ua/',
     viewportHeight: 1080,
     viewportWidth: 1920,
     setupNodeEvents(on, config) {
-      on('task', {
-        setUserData: (userData) => {
-          global.userData = userData;
-          return null;
-        },
-        getUserData: () => {
-          return global.userData;
-        },
-      });
       getCompareSnapshotsPlugin(on, config);   
       on("before:browser:launch", (browser = {}, launchOptions) => {
         prepareAudit(launchOptions);
