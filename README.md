@@ -10,4 +10,4 @@ To run these tests you need to complete next steps:
   3. open terminal
   4. enter this command: npx cypress run
   
-Tests will run in headless mode and junit reported will make test-report
+Tests will run in headless mode and junit reporter will generate a test-report
