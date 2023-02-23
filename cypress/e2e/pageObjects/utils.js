@@ -16,14 +16,11 @@ export const toMoney = (value) => {
   return formatter.format(value);
 };
 
-export const partner = {
-  email : '2test@test.com',
-  password : "qwe"
-};
 
-export const admin = {
+
+export const user = {
   email : 'super@admin.com',
-  password : "password"
+  password : "password!1"
 };
 
 export function getDateFromNow(days, months, years) {
