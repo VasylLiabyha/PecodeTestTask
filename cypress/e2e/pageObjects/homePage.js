@@ -18,5 +18,13 @@ export default class HomePage {
   getSearchBtn () {
     return cy.xpath("//button[contains(text(),'Знайти')]");
   }
+
+  openSideBar () {
+    return cy.xpath("//button[@aria-label='Відкрити меню']").click();
+  }
+
+  logout () {
+    return cy.xpath("//button[contains(text(),'Вийти з аккаунта')]").click();
+  }
   
 }

@@ -19,4 +19,12 @@ export default class CartForm {
   getCartTotalCost () {
     return cy.xpath("//div[@class='cart-receipt__sum-price']");
   }
+
+  unfoldDeleteBtn () {
+    return cy.xpath("//button[@id='cartProductActions0']").click()
+  }
+
+  getDeleteBtn () {
+    return cy.xpath("//button[contains(text(),'Видалити')]")
+  }
 }

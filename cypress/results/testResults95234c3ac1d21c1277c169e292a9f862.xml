@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="my tests" time="21.891" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2023-02-23T22:05:07" tests="0" file="cypress\e2e\functionalTests\testCase1.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="QA Automation test task: test-case 1" timestamp="2023-02-23T22:05:07" tests="1" time="21.872" failures="0">
+    <testcase name="QA Automation test task: test-case 1 Verify the price filter" time="21.726" classname="Verify the price filter">
+    </testcase>
+  </testsuite>
+</testsuites>

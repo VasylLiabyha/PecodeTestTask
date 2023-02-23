@@ -35,34 +35,32 @@ describe ("QA Automation test task: test-case 2", () => {
       cy.wrap(product).find('.goods-tile__title').then((title) =>{   
         allTitles[0] = title.text().slice(1, -1);
       })
-      cy.wrap(product).find('.buy-button').click().should('attr','aria-label', 'В кошику');
-    })
-    
+
+      cy.wrap(product).find('.buy-button').should('be.visible').click();
+    })  
     cy.go('back');
-    cy.get("@getBanners").wait("@getBanners");
+    cy.wait("@getBanners");
     computerAndNotebooksPage.getMonitorsCard().click();
-    cy.get("@getBanners").wait("@getBanners");
-    cy.get("@getBanners").wait("@getBanners");
+    cy.wait("@getBanners");
+    cy.wait("@getBanners");
     monitorsPage.getListOfSuggestedProducts().find('li').first().then(product => {
 
       cy.wrap(product).find('.goods-tile__price-value').then((price) =>{   
         totalPrice = totalPrice + parseInt(price.text().replace(/\u00a0/g, "").replace('₴', ""));
-      })
+      });
       cy.wrap(product).find('.goods-tile__title').then((title) =>{   
         allTitles[1] = title.text().slice(1, -1);
-      })
-      cy.wrap(product).find('.buy-button').click().should('attr','aria-label', 'В кошику');
-    })
+      });
+      cy.wrap(product).find('.buy-button').should('be.visible').click();
+    });
     cartForm.getCartButton().click();
     cy.intercept('GET', 'https://common-api.rozetka.com.ua/v2/goods/get-cart-blocks?*').as('getCart');
-    cy.wait("@getCart")
-   
+    cy.wait("@getCart") ;
     cartForm.getCartProducts().should('be.visible').and('have.length', 2);
-    cartForm.getProductTitle().each(($el, index, $list) => {     
+    cartForm.getProductTitle().each(($el, index, $list) => {  
       const productTitle = $el.text();
-      cartProductTitles[index] = productTitle;
-    
-    }).then( () => {  
+      cartProductTitles[index] = productTitle;  
+    }).then(() => {  
       const stringifiedCardProductTitles = cartProductTitles.sort().toString();
       allTitles = allTitles.sort().toString();
 
@@ -72,5 +70,10 @@ describe ("QA Automation test task: test-case 2", () => {
       cartTotalPrice = parseInt(cartTotalPrice.text().replace(/\u00a0/g, "").replace('₴', ""));
       expect(cartTotalPrice).to.deep.eq(totalPrice);
     });
+    cartForm.unfoldDeleteBtn();
+    cartForm.getDeleteBtn().click()
+    cy.wait("@getCart");
+    cartForm.getCartProducts().should('be.visible').and('have.length', 1);
   });
+
 });

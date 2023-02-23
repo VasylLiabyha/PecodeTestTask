@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="my tests" time="11.968" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2023-02-23T22:06:12" tests="0" file="cypress\e2e\functionalTests\testCase4.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="QA Automation test task: test-case 4" timestamp="2023-02-23T22:06:12" tests="1" time="11.938" failures="1">
+    <testcase name="QA Automation test task: test-case 4 Happy login and logout" time="0.000" classname="Happy login and logout">
+      <failure message="Timed out retrying after 4000ms: Expected &lt;div.modal__holder.modal__holder_show_animation.modal__holder--medium&gt; not to exist in the DOM, but it was continuously found." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected <div.modal__holder.modal__holder_show_animation.modal__holder--medium> not to exist in the DOM, but it was continuously found.
+    at Context.eval (webpack:///./cypress/e2e/functionalTests/testCase4.cy.js:22:29)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>
