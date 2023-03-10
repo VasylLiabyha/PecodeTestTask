@@ -1,5 +1,5 @@
-# PecodeTestTask
-This is repository for test task for Pecode
+# Portfolio
+This is repository contains tests for website rozetka.com.ua
 
 To run these tests you need to complete next steps:
 
