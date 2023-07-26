@@ -46,5 +46,5 @@ describe ("QA Automation test task: test-case 1", () => {
       expect(highestPriceOfProduct <= maxPrice).to.be.true;
     });
   });
-
+//some text
 });
